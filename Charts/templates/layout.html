@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block styles %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    {% endblock %}
+    <title>Sales Stats</title>
+  </head>
+  <body>
+    {% block navbar %}
+    <div class="container-fluid">
+      <nav class="navbar navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+          <img src="{{url_for('static', filename='img/logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+          SalesStats
+          </a>
+        </div>
+      </nav>
+    </div>
+
+{% endblock %}
+
+    <div class="container-fluid content-wrap">
+    {% block content%}
+    {%endblock%}
+    </div>
+    <div class="container-fluid footer justify-content-center">
+    {% block footer%}
+      <footer>
+          <div class="container">
+              <span>&copy; 2018 SalesStats Inc. All rights reserved.</span>
+              <span>Powered by RutgersRails</span>
+          </div>
+      </footer>
+    {%endblock%}
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% block scripts%}
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    {%endblock%}
+  </body>
+</html>

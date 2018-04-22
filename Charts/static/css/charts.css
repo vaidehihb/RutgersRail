@@ -1,0 +1,44 @@
+#charts-container {
+    width:80%;
+}
+
+.chart-wrap{
+    width:70%;
+}
+
+.content-wrap{
+    margin:20px 0 0 0;
+}
+
+.navbar-light .navbar-brand , footer{
+    color: #fff;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover{
+    color:#d9e6f2;
+}
+
+.navbar-brand img{
+    margin-right:10px;
+}
+
+.navbar, footer{
+    background-color:#004466;
+}
+
+.nav-link{
+    color:#004466;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #004466;
+}
+
+footer{
+    padding:17px 0;
+}
+
+.footer{
+    position:fixed;
+    bottom:0;
+}

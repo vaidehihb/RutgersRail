@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/charts.css')}}">
+{% endblock %}
+{% block content%}
+<div class="container" id="charts-container">
+    <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab" role="tablist">
+            <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-linechart" role="tab" aria-controls="pills-home" aria-selected="true">Sales by Year</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-piechart" role="tab" aria-controls="pills-profile" aria-selected="false">Sales by Percentage</a>
+            </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-linechart" role="tabpanel" aria-labelledby="pills-linechart-tab">
+            <div class="container">
+                <div class="row">
+                    <div class="chart-wrap">
+                        <div id="line" style="height: 500px"></div>
+                    </div>
+                    <div class="form-wrap col line-form col-lg-3">
+                        <form>
+                            <div class="form-group">
+                                <label for="regionSelect">Regions</label>
+                                <select class="form-control mdb-select colorful-select dropdown-primary" id="regionSelect">
+                                    <option value="" disabled selected>Choose a region</option>
+                                    {% for item in regions %}
+                                        <option value={{item}}>{{item}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-piechart" role="tabpanel" aria-labelledby="pills-piechart-tab">
+            <div class="container">
+                <div class="row">
+                    <div class="chart-wrap">
+                        <div id="pie" style="height: 500px"></div>
+                    </div>
+                    <div class="form-wrap col pie-form col-lg-3">
+                        <form>
+                            <div class="form-group">
+                                <label for="regionSelect">Regions</label>
+                                <select class="form-control mdb-select colorful-select dropdown-primary" id="regionSelect">
+                                    <option value="" disabled selected>Choose a region</option>
+                                    {% for item in regions %}
+                                        <option value={{item}}>{{item}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
+{% block scripts %}
+{{super()}}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="{{url_for('static', filename='js/charts.js')}}"></script>
+{% endblock %}
